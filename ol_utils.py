@@ -9,10 +9,10 @@ from imblearn.under_sampling import RandomUnderSampler
 from sklearn.model_selection import train_test_split
 import tensorflow as tf
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] ='ol.json'
-
 # Function
-def get_dataset(table_name):
+def get_dataset(table_name, credentials_path):
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials_path
+
     your_project_id = 'obvious-labs'
     project_id = "obvious-labs"
     dataset_id = "coinscale"#"DAMR"
