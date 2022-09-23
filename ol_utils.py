@@ -10,8 +10,7 @@ from sklearn.model_selection import train_test_split
 import tensorflow as tf
 
 # Function
-def get_dataset(table_name, credentials_path):
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials_path
+def get_dataset(table_name):
 
     your_project_id = 'obvious-labs'
     project_id = "obvious-labs"
@@ -160,5 +159,8 @@ def get_data(table_name):
     X_train, X_test, y_train, y_test = prepare_dataset(df)
     Counter(y_test)
     return X_train, X_test, y_train, y_test
+
+def set_credential_path(path):
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = path
 
 #get_data()
